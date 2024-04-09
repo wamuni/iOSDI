@@ -6,14 +6,12 @@
 //
 
 import UIKit
+import DIUIKit
+import APIKit
 
-struct Course {
-    var name: String
-}
+extension APICaller: DataFetchable {}
 
 class ViewController: UIViewController {
-    
-    let courses = [Course]()
     
     private var button: UIButton = {
         let button = UIButton()
@@ -36,7 +34,8 @@ class ViewController: UIViewController {
     // https://iosacademy.io/api/v1/courses/index.php
     
     @objc private func didTapButton() {
-        
+        let vc = CourseViewController(dataFetchable: APICaller.shared)
+        present(vc, animated: true)
     }
 
 }
