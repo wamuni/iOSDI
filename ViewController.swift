@@ -29,10 +29,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.addSubview(button)
         button.center = view.center
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
     
     // to get api response of a list of course
     // https://iosacademy.io/api/v1/courses/index.php
+    
+    @objc private func didTapButton() {
+        
+    }
 
 }
 
